@@ -1,0 +1,9 @@
+.name-item {
+  width: 100vw;
+  padding: 0.3rem 0;
+}
+
+.name-item span {
+  display: inline-block;
+  width: 15%;
+}
