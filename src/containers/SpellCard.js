@@ -14,10 +14,10 @@ class SpellCard extends Component {
 
   render() {
     return (
-      <div className="card" onClick={this.handleToggle}>
+      <li className="card" onClick={this.handleToggle}>
         <SpellName spell={this.props.spell} />
         {this.state.toggle ? <SpellDetail spell={this.props.spell} /> : null}
-      </div>
+      </li>
     );
   }
 }

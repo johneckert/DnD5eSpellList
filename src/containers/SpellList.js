@@ -1,30 +1,21 @@
 import React, { Component } from "react";
-import SpellCard from "./SpellCard.js";
+import SpellLevel from "./SpellLevel";
 
 class SpellList extends Component {
   state = {
     spells: {
-      Cantrip: [],
-      One: [],
-      Two: [],
-      Three: [],
-      Four: [],
-      Five: [],
-      Six: [],
-      Seven: [],
-      Eight: [],
-      Nine: []
-    }
-  };
-
-  compareNames = (a, b) => {
-    if (a.name < b.name) {
-      return -1;
-    }
-    if (b.name < a.name) {
-      return 1;
-    }
-    return 0;
+      cantrip: [],
+      one: [],
+      two: [],
+      three: [],
+      four: [],
+      five: [],
+      six: [],
+      seven: [],
+      eight: [],
+      nine: []
+    },
+    classes: []
   };
 
   componentDidMount() {
@@ -91,84 +82,34 @@ class SpellList extends Component {
     this.setState({
       ...this.state,
       spells: {
-        Cantrip: lvl0,
-        One: lvl1,
-        Two: lvl2,
-        Three: lvl3,
-        Four: lvl4,
-        Five: lvl5,
-        Six: lvl6,
-        Seven: lvl7,
-        Eight: lvl8,
-        Nine: lvl9
+        cantrip: lvl0,
+        one: lvl1,
+        two: lvl2,
+        three: lvl3,
+        four: lvl4,
+        five: lvl5,
+        six: lvl6,
+        seven: lvl7,
+        eight: lvl8,
+        nine: lvl9
       }
     });
   }
 
   render() {
-    console.log(this.state);
+    console.log("List Render", this.state.spells);
     return (
       <div>
-        <h3>Cantrip</h3>
-        {this.state.spells.Cantrip
-          ? this.state.spells.Cantrip.map(spell => {
-              return <SpellCard key={spell.id} spell={spell} handleSort={this.props.handleSort} />;
-            })
-          : null}
-        <h3>Level 1</h3>
-        {this.state.spells.One
-          ? this.state.spells.One.map(spell => {
-              return <SpellCard key={spell.id} spell={spell} handleSort={this.props.handleSort} />;
-            })
-          : null}
-        <h3>Level 2</h3>
-        {this.state.spells.Two
-          ? this.state.spells.Two.map(spell => {
-              return <SpellCard key={spell.id} spell={spell} handleSort={this.props.handleSort} />;
-            })
-          : null}
-        <h3>Level 3</h3>
-        {this.state.spells.Three
-          ? this.state.spells.Three.map(spell => {
-              return <SpellCard key={spell.id} spell={spell} handleSort={this.props.handleSort} />;
-            })
-          : null}
-        <h3>Level 4</h3>
-        {this.state.spells.Four
-          ? this.state.spells.Four.map(spell => {
-              return <SpellCard key={spell.id} spell={spell} handleSort={this.props.handleSort} />;
-            })
-          : null}
-        <h3>Level 5</h3>
-        {this.state.spells.Five
-          ? this.state.spells.Five.map(spell => {
-              return <SpellCard key={spell.id} spell={spell} handleSort={this.props.handleSort} />;
-            })
-          : null}
-        <h3>Level 6</h3>
-        {this.state.spells.Six
-          ? this.state.spells.Six.map(spell => {
-              return <SpellCard key={spell.id} spell={spell} handleSort={this.props.handleSort} />;
-            })
-          : null}
-        <h3>Level 7</h3>
-        {this.state.spells.Seven
-          ? this.state.spells.Seven.map(spell => {
-              return <SpellCard key={spell.id} spell={spell} handleSort={this.props.handleSort} />;
-            })
-          : null}
-        <h3>Level 8</h3>
-        {this.state.spells.Eight
-          ? this.state.spells.Eight.map(spell => {
-              return <SpellCard key={spell.id} spell={spell} handleSort={this.props.handleSort} />;
-            })
-          : null}
-        <h3>Level 9</h3>
-        {this.state.spells.Nine
-          ? this.state.spells.Nine.map(spell => {
-              return <SpellCard key={spell.id} spell={spell} handleSort={this.props.handleSort} />;
-            })
-          : null}
+        <SpellLevel lvl={"Cantrip"} spells={this.state.spells.cantrip} />
+        <SpellLevel lvl={"Level 1"} spells={this.state.spells.one} />
+        <SpellLevel lvl={"Level 2"} spells={this.state.spells.two} />
+        <SpellLevel lvl={"Level 3"} spells={this.state.spells.three} />
+        <SpellLevel lvl={"Level 4"} spells={this.state.spells.four} />
+        <SpellLevel lvl={"Level 5"} spells={this.state.spells.five} />
+        <SpellLevel lvl={"Level 6"} spells={this.state.spells.six} />
+        <SpellLevel lvl={"Level 7"} spells={this.state.spells.seven} />
+        <SpellLevel lvl={"Level 8"} spells={this.state.spells.eight} />
+        <SpellLevel lvl={"Level 9"} spells={this.state.spells.nine} />
       </div>
     );
   }
