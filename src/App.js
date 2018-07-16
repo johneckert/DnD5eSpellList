@@ -55,7 +55,24 @@ class App extends Component {
               spellItem.level = json["level"];
               spellItem.school = json["school"]["name"];
               spellItem.classes = json["classes"].map(castClass => castClass["name"]);
-              spellItem.subclasses = json["subclasses"].map(subclass => subclass["name"]);
+              //decode sublcasses to class
+              json["subclasses"].forEach(subclass => {
+                if (subclass["name"] === "Lore" && !spellItem.classes.includes("Bard")) {
+                  spellItem.classes.push("Bard");
+                }
+                if (subclass["name"] === "Land" && !spellItem.classes.includes("Druid")) {
+                  spellItem.classes.push("Druid");
+                }
+                if (subclass["name"] === "Life" && !spellItem.classes.includes("Cleric")) {
+                  spellItem.classes.push("Cleric");
+                }
+                if (subclass["name"] === "Devotion" && !spellItem.classes.includes("Paladin")) {
+                  spellItem.classes.push("Paladin");
+                }
+                if (subclass["name"] === "Fiend" && !spellItem.classes.includes("Warlock")) {
+                  spellItem.classes.push("Warlock");
+                }
+              });
               //sort spells into state by class
               if (spellItem.level === 0) {
                 this.setState({
@@ -136,7 +153,7 @@ class App extends Component {
           cl={this.state.cl}
           handleFilter={this.handleFilter}
         />
-        <SpellList spells={this.state.spells} />
+        <SpellList spells={this.state.spells} cl={this.state.cl} />
       </div>
     );
   }

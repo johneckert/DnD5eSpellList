@@ -6,16 +6,16 @@ class SpellList extends Component {
     console.log("List Render", this.props.spells);
     return (
       <div>
-        <SpellLevel lvl={"Cantrip"} spells={this.props.spells.cantrip} />
-        <SpellLevel lvl={"Level 1"} spells={this.props.spells.one} />
-        <SpellLevel lvl={"Level 2"} spells={this.props.spells.two} />
-        <SpellLevel lvl={"Level 3"} spells={this.props.spells.three} />
-        <SpellLevel lvl={"Level 4"} spells={this.props.spells.four} />
-        <SpellLevel lvl={"Level 5"} spells={this.props.spells.five} />
-        <SpellLevel lvl={"Level 6"} spells={this.props.spells.six} />
-        <SpellLevel lvl={"Level 7"} spells={this.props.spells.seven} />
-        <SpellLevel lvl={"Level 8"} spells={this.props.spells.eight} />
-        <SpellLevel lvl={"Level 9"} spells={this.props.spells.nine} />
+        <SpellLevel lvl={"Cantrip"} spells={this.props.spells.cantrip} cl={this.props.cl} />
+        <SpellLevel lvl={"Level 1"} spells={this.props.spells.one} cl={this.props.cl} />
+        <SpellLevel lvl={"Level 2"} spells={this.props.spells.two} cl={this.props.cl} />
+        <SpellLevel lvl={"Level 3"} spells={this.props.spells.three} cl={this.props.cl} />
+        <SpellLevel lvl={"Level 4"} spells={this.props.spells.four} cl={this.props.cl} />
+        <SpellLevel lvl={"Level 5"} spells={this.props.spells.five} cl={this.props.cl} />
+        <SpellLevel lvl={"Level 6"} spells={this.props.spells.six} cl={this.props.cl} />
+        <SpellLevel lvl={"Level 7"} spells={this.props.spells.seven} cl={this.props.cl} />
+        <SpellLevel lvl={"Level 8"} spells={this.props.spells.eight} cl={this.props.cl} />
+        <SpellLevel lvl={"Level 9"} spells={this.props.spells.nine} cl={this.props.cl} />
       </div>
     );
   }
