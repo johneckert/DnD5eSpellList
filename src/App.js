@@ -5,7 +5,18 @@ import "./App.css";
 
 class App extends Component {
   state = {
-    spells: [],
+    spells: {
+      cantrip: [],
+      one: [],
+      two: [],
+      three: [],
+      four: [],
+      five: [],
+      six: [],
+      seven: [],
+      eight: [],
+      nine: []
+    },
     cl: {
       bard: true,
       cleric: true,
@@ -19,7 +30,6 @@ class App extends Component {
   };
 
   componentDidMount() {
-    const allSpells = [];
     //fetch list of spells
     fetch("http://www.dnd5eapi.co/api/spells")
       .then(res => res.json())
@@ -46,11 +56,64 @@ class App extends Component {
               spellItem.school = json["school"]["name"];
               spellItem.classes = json["classes"].map(castClass => castClass["name"]);
               spellItem.subclasses = json["subclasses"].map(subclass => subclass["name"]);
-              allSpells.push(spellItem);
+              //sort spells into state by class
+              if (spellItem.level === 0) {
+                this.setState({
+                  ...this.state,
+                  spells: {
+                    ...this.state.spells,
+                    cantrip: [...this.state.spells.cantrip, spellItem]
+                  }
+                });
+              } else if (spellItem.level === 1) {
+                this.setState({
+                  ...this.state,
+                  spells: { ...this.state.spells, one: [...this.state.spells.one, spellItem] }
+                });
+              } else if (spellItem.level === 2) {
+                this.setState({
+                  ...this.state,
+                  spells: { ...this.state.spells, two: [...this.state.spells.two, spellItem] }
+                });
+              } else if (spellItem.level === 3) {
+                this.setState({
+                  ...this.state,
+                  spells: { ...this.state.spells, three: [...this.state.spells.three, spellItem] }
+                });
+              } else if (spellItem.level === 4) {
+                this.setState({
+                  ...this.state,
+                  spells: { ...this.state.spells, four: [...this.state.spells.four, spellItem] }
+                });
+              } else if (spellItem.level === 5) {
+                this.setState({
+                  ...this.state,
+                  spells: { ...this.state.spells, five: [...this.state.spells.five, spellItem] }
+                });
+              } else if (spellItem.level === 6) {
+                this.setState({
+                  ...this.state,
+                  spells: { ...this.state.spells, six: [...this.state.spells.six, spellItem] }
+                });
+              } else if (spellItem.level === 7) {
+                this.setState({
+                  ...this.state,
+                  spells: { ...this.state.spells, seven: [...this.state.spells.seven, spellItem] }
+                });
+              } else if (spellItem.level === 8) {
+                this.setState({
+                  ...this.state,
+                  spells: { ...this.state.spells, eight: [...this.state.spells.eight, spellItem] }
+                });
+              } else if (spellItem.level === 9) {
+                this.setState({
+                  ...this.state,
+                  spells: { ...this.state.spells, nine: [...this.state.spells.nine, spellItem] }
+                });
+              }
             });
         });
       });
-    this.setState({ ...this.state, spells: allSpells });
   }
 
   handleFilter = e => {
