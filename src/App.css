@@ -64,7 +64,6 @@ nav {
 
 .name-item span {
   display: inline-block;
-  width: 3%;
   font-size: 1.5em;
 }
 
@@ -80,4 +79,8 @@ nav {
   padding: 0 5rem 0 1rem;
   border-color: var(--pastel);
   border-width: thin;
+}
+
+.icon {
+  width: 5rem;
 }

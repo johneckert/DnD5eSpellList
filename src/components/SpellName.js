@@ -1,16 +1,16 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLightbulb, faBullseye } from "@fortawesome/free-solid-svg-icons";
 
 const SpellName = props => {
-  const ritual = <FontAwesomeIcon icon={faBullseye} />;
-  const concentration = <FontAwesomeIcon icon={faLightbulb} />;
+  const ritual = props.spell.ritual ? <img src="./ritual.png" alt="ritual" /> : null;
+  const concentration = props.spell.concentration ? (
+    <img src="./concentration.png" alt="concentration" />
+  ) : null;
 
   return (
     <div className="name-item">
       <span>{props.spell.name}</span>
-      <span>{props.spell.ritual ? ritual : null}</span>
-      <span>{props.spell.concentration ? concentration : null}</span>
+      <span className="icon">{ritual}</span>
+      <span className="icon">{concentration}</span>
     </div>
   );
 };
