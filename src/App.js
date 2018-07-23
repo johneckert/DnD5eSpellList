@@ -22,7 +22,7 @@ class App extends Component {
 
   componentDidMount() {
     //fetch list of spells
-    fetch("https://www.dnd5eapi.co/api/spells")
+    fetch("http://www.dnd5eapi.co/api/spells")
       .then(res => res.json())
       .then(json => {
         //fetch detail data for each spell
