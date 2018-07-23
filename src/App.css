@@ -1,3 +1,62 @@
+:root {
+  /* document setup */
+  --dark-jungle-green: #1b2021;
+  --gunmetal: #30343f;
+  --raspberry: #89023e;
+  --latte: #fff8e8;
+  --pastel: #cecccc;
+  box-sizing: border-box;
+  font-size: calc(0.3em + 1vw);
+  font-family: var(--main-font);
+  font-weight: 500;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+ul {
+  list-style: none;
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+a,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--latte);
+}
+
+nav {
+}
+
+.spell-level h3 {
+  color: var(--raspberry);
+}
+
+.spell-level {
+  margin-left: 10vw;
+}
+
 .name-item {
   width: 100vw;
   padding: 0.3rem 0;
@@ -5,5 +64,20 @@
 
 .name-item span {
   display: inline-block;
-  width: 15%;
+  width: 3%;
+  font-size: 1.5em;
+}
+
+.name-item :nth-child(1) {
+  color: var(--dark-jungle-green);
+  font-size: 1.2em;
+  display: inline-block;
+  width: 20%;
+}
+
+.detail-item {
+  color: var(--gunmetal);
+  padding: 0 5rem 0 1rem;
+  border-color: var(--pastel);
+  border-width: thin;
 }

@@ -17,16 +17,8 @@ class App extends Component {
       eight: [],
       nine: []
     },
-    cl: {
-      bard: true,
-      cleric: true,
-      druid: true,
-      paladin: true,
-      ranger: true,
-      sorcerer: true,
-      warlock: true,
-      wizard: true
-    }
+    cl: "All",
+    clArr: ["Bard", "Cleric", "Druid", "Paladin", "Ranger", "Sorcerer", "Warlock", "Wizard"]
   };
 
   componentDidMount() {
@@ -133,27 +125,28 @@ class App extends Component {
       });
   }
 
-  handleFilter = e => {
-    e.preventDefault();
-    console.log(e.target.value);
+  handleCheck = e => {
+    this.setState({ ...this.state, cl: e.target.value });
   };
 
-  handleCheck = e => {
-    this.setState({
-      ...this.state,
-      cl: { ...this.state.cl, [e.target.value]: !this.state.cl[e.target.value] }
-    });
+  updateClArr = () => {
+    const arr = [];
+    for (let cl in this.state.cl) {
+      console.log("cl", cl);
+      if (this.state.cl[cl]) {
+        let clName = cl.charAt(0).toUpperCase() + cl.slice(1);
+        console.log("clName", clName);
+        arr.push(clName);
+      }
+    }
+    this.setState({ ...this.state, clArr: arr }, console.log(this.state.clArr));
   };
 
   render() {
     return (
-      <div>
-        <ClassFilter
-          handleCheck={this.handleCheck}
-          cl={this.state.cl}
-          handleFilter={this.handleFilter}
-        />
-        <SpellList spells={this.state.spells} cl={this.state.cl} />
+      <div className="main-container">
+        <ClassFilter handleCheck={this.handleCheck} cl={this.state.cl} />
+        <SpellList spells={this.state.spells} clArr={this.state.clArr} />
       </div>
     );
   }

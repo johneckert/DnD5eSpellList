@@ -4,75 +4,83 @@ const ClassFilter = props => {
   // const CLASSES = ["Bard", "Cleric", "Druid", "Paladin", "Ranger", "Sorcerer", "Warlock", "Wizard"];
 
   return (
-    <form>
-      <label name="bard">Bard</label>
+    <nav>
+      <label name="All">All</label>
       <input
-        type="checkbox"
-        name="bard"
-        value="bard"
-        checked={props.cl.bard}
+        type="radio"
+        name="All"
+        value="All"
+        checked={props.cl === "All"}
         onChange={props.handleCheck}
       />
-      <label name="cleric">Cleric</label>
+      <label name="Bard">Bard</label>
       <input
-        type="checkbox"
-        name="cleric"
-        value="cleric"
-        checked={props.cl.cleric}
+        type="radio"
+        name="Bard"
+        value="Bard"
+        checked={props.cl === "Bard"}
         onChange={props.handleCheck}
       />
-      <label name="druid">Druid</label>
+      <label name="Cleric">Cleric</label>
       <input
-        type="checkbox"
-        name="druid"
-        value="druid"
-        checked={props.cl.druid}
+        type="radio"
+        name="Cleric"
+        value="Cleric"
+        checked={props.cl === "Cleric"}
         onChange={props.handleCheck}
       />
-      <label name="paladin">Paladin</label>
+      <label name="Druid">Druid</label>
       <input
-        type="checkbox"
-        name="paladin"
-        value="paladin"
-        checked={props.cl.paladin}
+        type="radio"
+        name="Druid"
+        value="Druid"
+        checked={props.cl === "Druid"}
         onChange={props.handleCheck}
       />
-      <label name="ranger">Ranger</label>
+      <label name="Paladin">Paladin</label>
       <input
-        type="checkbox"
-        name="ranger"
-        value="ranger"
-        checked={props.cl.ranger}
+        type="radio"
+        name="Paladin"
+        value="Paladin"
+        checked={props.cl === "Paladin"}
         onChange={props.handleCheck}
       />
-      <label name="sorcerer">Sorcerer</label>
+      <label name="Ranger">Ranger</label>
       <input
-        type="checkbox"
+        type="radio"
+        name="Ranger"
+        value="Ranger"
+        checked={props.cl === "Ranger"}
+        onChange={props.handleCheck}
+      />
+      <label name="Sorcerer">Sorcerer</label>
+      <input
+        type="radio"
         label="Sorcerer"
-        name="sorcerer"
-        value="sorcerer"
-        checked={props.cl.sorcerer}
+        name="Sorcerer"
+        value="Sorcerer"
+        checked={props.cl === "Sorcerer"}
         onChange={props.handleCheck}
       />
-      <label name="warlock">Warlock</label>
+      <label name="Warlock">Warlock</label>
       <input
-        type="checkbox"
+        type="radio"
         label="Warlock"
-        name="warlock"
-        value="warlock"
-        checked={props.cl.warlock}
+        name="Warlock"
+        value="Warlock"
+        checked={props.cl === "Warlock"}
         onChange={props.handleCheck}
       />
-      <label name="wizard">Wizard</label>
+      <label name="Wizard">Wizard</label>
       <input
-        type="checkbox"
+        type="radio"
         label="Wizard"
-        name="wizard"
-        value="wizard"
-        checked={props.cl.wizard}
+        name="Wizard"
+        value="Wizard"
+        checked={props.cl === "Wizard"}
         onChange={props.handleCheck}
       />
-    </form>
+    </nav>
   );
 };
 
