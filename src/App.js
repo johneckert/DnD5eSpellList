@@ -17,8 +17,7 @@ class App extends Component {
       eight: [],
       nine: []
     },
-    cl: "All",
-    clArr: ["Bard", "Cleric", "Druid", "Paladin", "Ranger", "Sorcerer", "Warlock", "Wizard"]
+    cl: "All"
   };
 
   componentDidMount() {
@@ -146,7 +145,7 @@ class App extends Component {
     return (
       <div className="main-container">
         <ClassFilter handleCheck={this.handleCheck} cl={this.state.cl} />
-        <SpellList spells={this.state.spells} clArr={this.state.clArr} />
+        <SpellList spells={this.state.spells} cl={this.state.cl} />
       </div>
     );
   }

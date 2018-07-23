@@ -3,15 +3,15 @@ import SpellCard from "./SpellCard";
 
 class SpellLevel extends Component {
   checkClass = classArr => {
-    let isRelevant = false;
-    classArr.forEach(spellCl => {
-      while (!isRelevant) {
-        if (this.props.clArr.includes(spellCl)) {
-          isRelevant = true;
-        }
-      }
-    });
-    return isRelevant;
+    if (this.props.cl === "All") {
+      return true;
+    }
+
+    if (classArr.includes(this.props.cl)) {
+      return true;
+    } else {
+      return false;
+    }
   };
 
   render() {
