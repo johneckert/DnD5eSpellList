@@ -15,7 +15,7 @@ class SpellCard extends Component {
   render() {
     return (
       <li className="card" onClick={this.handleToggle}>
-        <SpellName spell={this.props.spell} />
+        <SpellName spell={this.props.spell} active={this.state.toggle} />
         {this.state.toggle ? <SpellDetail spell={this.props.spell} /> : null}
       </li>
     );

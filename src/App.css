@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Alegreya|Cinzel|Markazi+Text|Merienda|Merriweather");
+
 :root {
   /* document setup */
   --dark-jungle-green: #1b2021;
@@ -6,15 +8,19 @@
   --latte: #fff8e8;
   --pastel: #cecccc;
   box-sizing: border-box;
-  font-size: calc(0.3em + 1vw);
+  font-size: calc(0.8em + 1vw);
   font-family: var(--main-font);
   font-weight: 500;
+  --level-font: "Cinzel", serif;
+  --main-font: "Alegreya", serif;
+  --filter-font: "Cinzel", serif;
 }
 
 body {
   margin: 0;
   padding: 0;
   border: 0;
+  font-family: var(--main-font);
 }
 
 *,
@@ -47,19 +53,49 @@ a:visited {
 }
 
 nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: var(--gunmetal);
+  color: var(--pastel);
+  font-family: var(--filter-font);
+  font-weight: 900;
+  font-size: 1rem;
+  flex-wrap: wrap;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+label {
+  padding: 0 0.3rem 0 0.2rem;
+}
+
+.spell-list {
+  width: 95%;
+  max-width: 800px;
+  padding-bottom: 20%;
+  align-self: center;
 }
 
 .spell-level h3 {
+  font-weight: 900;
   color: var(--raspberry);
+  font-family: var(--level-font);
 }
 
-.spell-level {
-  margin-left: 10vw;
+.card {
+  max-height: 50%;
 }
 
 .name-item {
-  width: 100vw;
   padding: 0.3rem 0;
+  display: flex;
+  align-items: center;
 }
 
 .name-item span {
@@ -71,16 +107,35 @@ nav {
   color: var(--dark-jungle-green);
   font-size: 1.2em;
   display: inline-block;
-  width: 20%;
+  width: 90%;
+}
+
+.active {
+  color: var(--raspberry) !important;
 }
 
 .detail-item {
+  font-weight: 400;
+  font-size: 0.8rem;
   color: var(--gunmetal);
-  padding: 0 5rem 0 1rem;
-  border-color: var(--pastel);
-  border-width: thin;
+  padding: 0 2rem 0 1rem;
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  .detail-item {
+    font-size: 1rem;
+  }
+}
+
+.cat {
+  font-weight: 900;
+  padding-right: 0.3rem;
+  color: #000000;
 }
 
 .icon {
-  width: 5rem;
+  width: 2rem;
+  padding-right: 1rem;
+  align-self: center;
 }
