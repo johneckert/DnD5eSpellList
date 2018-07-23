@@ -36,13 +36,13 @@ const SpellDetail = props => {
       ) : null}
       {spell.desc ? (
         <li>
-          <p className="cat">Description</p>
+          <span className="cat">Description:</span>
           {spell.desc.map((line, i) => <p key={i}>{line}</p>)}
         </li>
       ) : null}
       {spell.higher ? (
         <li>
-          <p className="cat">Higher Levels</p>
+          <span className="cat">Higher Levels</span>
           {spell.higher ? spell.higher.map((line, i) => <p key={i}>{line}</p>) : null}
         </li>
       ) : null}
