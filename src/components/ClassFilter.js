@@ -4,7 +4,7 @@ const ClassFilter = props => {
   // const CLASSES = ["Bard", "Cleric", "Druid", "Paladin", "Ranger", "Sorcerer", "Warlock", "Wizard"];
   return (
     <nav>
-      <img src="./owlbear.png" alt="cute owlbear" />
+      <img src="owlbear.png" alt="cute owlbear" />
       <select onChange={props.handleCheck} value={props.cl}>
         <option value="All">All</option>
         <option value="Bard">Bard</option>
