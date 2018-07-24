@@ -58,19 +58,31 @@ nav {
   justify-content: space-between;
   padding: 1rem;
   background-color: var(--gunmetal);
+  align-items: center;
+}
+
+nav img {
+  width: 20%;
+  left: 0;
+}
+
+nav select {
   color: var(--pastel);
   font-family: var(--filter-font);
   font-weight: 900;
-  font-size: 1rem;
-  flex-wrap: wrap;
+  font-size: 2rem;
+  padding: 0 1rem;
+  box-shadow: none;
+  background: transparent;
+  background-image: none;
+  -webkit-appearance: none;
 }
 
-nav div {
-  display: flex;
-  align-items: center;
-  padding-top: 1rem;
+@media (min-width: 800px) {
+  nav select {
+    margin-right: 1rem;
+  }
 }
-
 label {
   padding: 0 0.3rem 0 0.2rem;
 }
