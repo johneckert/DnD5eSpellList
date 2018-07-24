@@ -21,7 +21,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:3000/spells/0")
+    fetch("https://spell-api.herokuapp.com/spells/0")
       .then(res => res.json())
       .then(json => {
         this.setState({
@@ -32,7 +32,7 @@ class App extends Component {
           }
         });
       });
-    fetch("http://localhost:3000/spells/1")
+    fetch("https://spell-api.herokuapp.com/spells/1")
       .then(res => res.json())
       .then(json => {
         this.setState({
@@ -43,7 +43,7 @@ class App extends Component {
           }
         });
       });
-    fetch("http://localhost:3000/spells/2")
+    fetch("https://spell-api.herokuapp.com/spells/2")
       .then(res => res.json())
       .then(json => {
         this.setState({
@@ -54,7 +54,7 @@ class App extends Component {
           }
         });
       });
-    fetch("http://localhost:3000/spells/3")
+    fetch("https://spell-api.herokuapp.com/spells/3")
       .then(res => res.json())
       .then(json => {
         this.setState({
@@ -65,7 +65,7 @@ class App extends Component {
           }
         });
       });
-    fetch("http://localhost:3000/spells/4")
+    fetch("https://spell-api.herokuapp.com/spells/4")
       .then(res => res.json())
       .then(json => {
         this.setState({
@@ -76,7 +76,7 @@ class App extends Component {
           }
         });
       });
-    fetch("http://localhost:3000/spells/5")
+    fetch("https://spell-api.herokuapp.com/spells/5")
       .then(res => res.json())
       .then(json => {
         this.setState({
@@ -87,7 +87,7 @@ class App extends Component {
           }
         });
       });
-    fetch("http://localhost:3000/spells/6")
+    fetch("https://spell-api.herokuapp.com/spells/6")
       .then(res => res.json())
       .then(json => {
         this.setState({
@@ -98,7 +98,7 @@ class App extends Component {
           }
         });
       });
-    fetch("http://localhost:3000/spells/7")
+    fetch("https://spell-api.herokuapp.com/spells/7")
       .then(res => res.json())
       .then(json => {
         this.setState({
@@ -109,7 +109,7 @@ class App extends Component {
           }
         });
       });
-    fetch("http://localhost:3000/spells/8")
+    fetch("https://spell-api.herokuapp.com/spells/8")
       .then(res => res.json())
       .then(json => {
         this.setState({
@@ -120,7 +120,7 @@ class App extends Component {
           }
         });
       });
-    fetch("http://localhost:3000/spells/9")
+    fetch("https://spell-api.herokuapp.com/spells/9")
       .then(res => res.json())
       .then(json => {
         this.setState({
