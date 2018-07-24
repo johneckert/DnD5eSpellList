@@ -19,13 +19,13 @@ const SpellDetail = props => {
       {spell.range ? (
         <li>
           <span className="cat">Range: </span>
-          {spell.Range}
+          {spell.range}
         </li>
       ) : null}
       {spell.components ? (
         <li>
           <span className="cat">Components: </span>
-          {spell.components.join(" ")}
+          {spell.components}
         </li>
       ) : null}
       {spell.material ? (
@@ -37,13 +37,19 @@ const SpellDetail = props => {
       {spell.desc ? (
         <li>
           <span className="cat">Description:</span>
-          {spell.desc.map((line, i) => <p key={i}>{line}</p>)}
+          {spell.desc.split("||||").map((line, i) => <p key={i}>{line}</p>)}
         </li>
       ) : null}
       {spell.higher ? (
         <li>
           <span className="cat">Higher Levels</span>
-          {spell.higher ? spell.higher.map((line, i) => <p key={i}>{line}</p>) : null}
+          {spell.higher ? spell.higher.split("||||").map((line, i) => <p key={i}>{line}</p>) : null}
+        </li>
+      ) : null}
+      {spell.page ? (
+        <li className="page">
+          <span className="cat">Page: </span>
+          {spell.page}
         </li>
       ) : null}
     </ul>
