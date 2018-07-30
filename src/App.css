@@ -66,20 +66,16 @@ nav img {
   left: 0;
 }
 
-nav select:after {
-  content: "<>";
+nav:after {
+  content: "< >";
+  color: var(--pastel);
+  font-family: var(--filter-font);
+  font-size: 1rem;
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
-  /* right: 11px; */
-  /*Adjust for position however you want*/
-
-  top: 18px;
-  padding: 0 0 2px;
-  border-bottom: 1px solid #999;
-  /*left line */
-
+  right: 2rem;
   position: absolute;
   pointer-events: none;
 }
