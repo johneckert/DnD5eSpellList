@@ -75,7 +75,6 @@ nav select {
   box-shadow: none;
   background: transparent;
   background-image: none;
-  -webkit-appearance: none;
 }
 
 @media (min-width: 800px) {
