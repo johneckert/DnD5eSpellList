@@ -74,6 +74,7 @@ nav select {
   padding: 0 1rem;
   box-shadow: none;
   background: transparent;
+  -webkit-appearance: menulist;
   /* background-image: none; */
 }
 
