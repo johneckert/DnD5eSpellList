@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import SpellCard from "./SpellCard";
 
 class SpellLevel extends Component {
-  checkClass = classArr => {
+  checkClass = (classArr) => {
     if (this.props.cl === "All") {
       return true;
     }
@@ -15,15 +15,17 @@ class SpellLevel extends Component {
   };
 
   render() {
+    console.log("lvl", this.props.spells);
     return (
       <div className="spell-level">
         <h3>{this.props.lvl}</h3>
         <ul>
-          {this.props.spells.map(spell => {
-            if (this.checkClass(spell.classes)) {
-              return <SpellCard key={spell.id} spell={spell} />;
-            }
-            return null;
+          {this.props.spells.map((spell) => {
+            console.log("map");
+            // if (this.checkClass(spell.classes)) {
+            return <SpellCard key={spell.id} spell={spell} />;
+            // }
+            // return null;
           })}
         </ul>
       </div>

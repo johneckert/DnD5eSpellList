@@ -4,15 +4,16 @@ import SpellDetail from "../components/SpellDetail";
 
 class SpellCard extends Component {
   state = {
-    toggle: false
+    toggle: false,
   };
 
-  handleToggle = e => {
+  handleToggle = (e) => {
     e.preventDefault();
     this.setState({ toggle: !this.state.toggle });
   };
 
   render() {
+    console.log("card", this.props.spell);
     return (
       <li className="card" onClick={this.handleToggle}>
         <SpellName spell={this.props.spell} active={this.state.toggle} />
