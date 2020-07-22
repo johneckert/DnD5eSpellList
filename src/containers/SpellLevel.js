@@ -21,7 +21,6 @@ class SpellLevel extends Component {
         <h3>{this.props.lvl}</h3>
         <ul>
           {this.props.spells.map((spell) => {
-            console.log("map");
             // if (this.checkClass(spell.classes)) {
             return <SpellCard key={spell.id} spell={spell} />;
             // }
